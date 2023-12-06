@@ -1,3 +1,4 @@
+const { log } = require('console');
 const fs = require('fs');
 const inquirer = require('inquirer');
 
@@ -55,5 +56,28 @@ inquirer
             name: 'license',
             nessage: 'Choose a license:',
             choices: ['MIT', 'Apache', 'GPL', 'none'],
-        }
+        },
+        {
+            type: 'input',
+            name: 'tests',
+            message: 'Enter test instructions:',
+        },
+        {
+            type: 'input',
+            name: 'username',
+            message: 'Ente Github username',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Enter email'
+        },
     ])
+    .then((answers)=> {
+        const READMEContent = generateREADME(answers);
+
+        fs.writeFile('README.md', READMEContent, (err)=> {
+            if (err) throw err;
+            console.log('README.MD created successfully!');
+        });
+    });
