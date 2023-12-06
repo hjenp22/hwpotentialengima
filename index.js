@@ -14,6 +14,7 @@ function generateREADME(answers) {
     - [Usage](#usage)
     - [License](#license)
     - [Test](#tests)
+    - [Contributing](#contributing)
     - [Questions](#questions)
     
     ## Installation
@@ -27,6 +28,9 @@ function generateREADME(answers) {
 
     ##Tests
     ${answers.tests}
+
+    ##Contributing
+    ${answers.contributing}
 
     ##Questions
     For questions, reach me at ${answers.email}.
@@ -64,8 +68,13 @@ inquirer
         },
         {
             type: 'input',
+            name: 'contributing',
+            message: 'Enter contributing factors:',
+        },
+        {
+            type: 'input',
             name: 'username',
-            message: 'Ente Github username',
+            message: 'Enter Github username',
         },
         {
             type: 'input',
