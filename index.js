@@ -12,7 +12,6 @@ function generateREADME(answers) {
     - [Installation](#installation)
     - [Usage](#usage)
     - [License](#license)
-    - [Contributing](#contributing)
     - [Test](#tests)
     - [Questions](#questions)
     
@@ -20,7 +19,18 @@ function generateREADME(answers) {
     ${answers.installation}
     
     ##Usage
-    `
+    ${answers.usage}
+
+    ## License
+    ![License Badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)
+
+    ##Tests
+    ${answers.tests}
+
+    ##Questions
+    For questions, reach me at ${answers.email}.
+    [Github Profile](https://github.com/${answers.username})
+    `;
 }
 
 inquirer
@@ -35,4 +45,15 @@ inquirer
             name: 'description',
             message: 'Enter description'
         },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Enter usage'
+        },
+        {
+            type: 'list',
+            name: 'license',
+            nessage: 'Choose a license:',
+            choices: ['MIT', 'Apache', 'GPL', 'none'],
+        }
     ])
