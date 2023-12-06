@@ -25,6 +25,9 @@ function generateREADME(answers) {
 
 inquirer
     .prompt([
-
-    
+        {
+            type: 'input',
+            name: 'title',
+            message: 'Enter Project Title'
+        },
     ])
