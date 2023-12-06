@@ -28,6 +28,11 @@ inquirer
         {
             type: 'input',
             name: 'title',
-            message: 'Enter Project Title'
+            message: 'Enter project title'
+        },
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Enter description'
         },
     ])
