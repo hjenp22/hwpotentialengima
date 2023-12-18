@@ -4,38 +4,38 @@ const inquirer = require('inquirer');
 
 function generateREADME(answers) {
     return `
-    # ${answers.title}
+# ${answers.title}
     
-    ## Description
-    ${answers.description}
+ ## Description
+ ${answers.description}
     
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Test](#tests)
-    - [Contributing](#contributing)
-    - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Test](#tests)
+- [Contributing](#contributing)
+- [Questions](#questions)
     
-    ## Installation
-    ${answers.installation}
+## Installation
+${answers.installation}
     
-    ##Usage
-    ${answers.usage}
+##Usage
+${answers.usage}
 
-    ## License
-    ![License Badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)
+## License
+![License Badge](https://img.shields.io/badge/license-${answers.license}-brightgreen)
 
-    ##Tests
-    ${answers.tests}
+##Tests
+${answers.tests}
 
-    ##Contributing
-    ${answers.contributing}
+##Contributing
+${answers.contributing}
 
-    ##Questions
-    For questions, reach me at ${answers.email}.
-    [Github Profile](https://github.com/${answers.username})
-    `;
+##Questions
+For questions, reach me at ${answers.email}.
+[Github Profile](https://github.com/${answers.username})
+`;
 }
 
 inquirer
@@ -82,11 +82,10 @@ inquirer
             message: 'Enter email'
         },
     ])
-    .then((answers)=> {
-        const READMEContent = generateREADME(answers);
-
-        fs.writeFile('README.md', READMEContent, (err)=> {
-            if (err) throw err;
-            console.log('README.MD created successfully!');
-        });
+.then((answers)=> {
+    const READMEContent = generateREADME(answers);
+    fs.writeFile('README.md', READMEContent, (err)=> {
+        if (err) throw err;
+        console.log('README.MD created successfully!');
     });
+});
