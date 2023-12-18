@@ -89,3 +89,54 @@
 //         console.log('README.MD created successfully!');
 //     });
 // });
+
+const inquirer = require('inquirer');
+const fs = require('fs');
+
+const {generateREADME} = require('./utils/generateREADME');
+
+const userDATA = {}
+
+const questions = [
+    {
+        type: 'input',
+        name: 'title',
+        message: 'Enter project title'
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Enter description'
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Enter usage'
+    },
+    {
+        type: 'list',
+        name: 'license',
+        message: 'Choose a license:',
+        choices: ['MIT', 'Apache', 'GPL', 'none'],
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Enter test instructions:',
+    },
+    {
+        type: 'input',
+        name: 'contributing',
+        message: 'Enter contributing factors:',
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: 'Enter Github username',
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Enter email'
+    },
+]
